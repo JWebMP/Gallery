@@ -6,6 +6,8 @@ public class BlueImpCarousel<J extends BlueImpCarousel<J>>
 	public BlueImpCarousel()
 	{
 		addClass(BlueImpGalleryClasses.BlueImp_Gallery_Carousel);
+		getContents().addStyle("display:none");
+		getFeature().setRenderInitializer(true);
 	}
 
 	@Override

@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class BlueImpGalleryPageConfigurator
 		implements IPageConfigurator
 {
-	private static final BlueImpGalleryDescriptionFeature galleryDescriptionFeature = new BlueImpGalleryDescriptionFeature();
+	private static BlueImpGalleryDescriptionFeature galleryDescriptionFeature;
 	/**
 	 * To include the indicators
 	 */
@@ -54,10 +54,6 @@ public class BlueImpGalleryPageConfigurator
 	 */
 	public static void setIncludeIndicators(boolean includeIndicators)
 	{
-		if (includeIndicators)
-		{
-			BlueImpGalleryPageConfigurator.setIncludeIndicators(true);
-		}
 		BlueImpGalleryPageConfigurator.includeIndicators = includeIndicators;
 	}
 
@@ -70,6 +66,10 @@ public class BlueImpGalleryPageConfigurator
 	 */
 	public static boolean isIncludeVideo()
 	{
+		if (BlueImpGalleryPageConfigurator.includeVideo)
+		{
+			BlueImpGalleryPageConfigurator.setIncludeIndicators(true);
+		}
 		return BlueImpGalleryPageConfigurator.includeVideo;
 	}
 
@@ -180,6 +180,11 @@ public class BlueImpGalleryPageConfigurator
 	@Override
 	public @NotNull Page<?> configure(Page<?> page)
 	{
+		if (BlueImpGalleryPageConfigurator.galleryDescriptionFeature == null)
+		{
+			BlueImpGalleryPageConfigurator.galleryDescriptionFeature = new BlueImpGalleryDescriptionFeature();
+		}
+
 		if (!page.isConfigured())
 		{
 			JQueryPageConfigurator.setRequired(true);

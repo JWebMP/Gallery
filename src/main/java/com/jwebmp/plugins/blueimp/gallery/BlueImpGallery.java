@@ -2,6 +2,7 @@ package com.jwebmp.plugins.blueimp.gallery;
 
 import com.jwebmp.core.base.html.*;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.plugins.blueimp.gallery.features.BlueImpGalleryFeature;
 import com.jwebmp.plugins.blueimp.gallery.options.BlueImpGalleryOptions;
 
 import javax.validation.constraints.NotNull;
@@ -46,21 +47,24 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 */
 	private final DivSimple<?> contents;
 	/**
+	 * The feature to initialize this gallery
+	 */
+	private final BlueImpGalleryFeature feature;
+	/**
 	 * The description of the current slide/image
 	 */
 	private Paragraph description;
-	/**
-	 * The options field
-	 */
-	private BlueImpGalleryOptions<?> options;
 
 	public BlueImpGallery()
 	{
 		this.slides = new DivSimple<>().addClass(Slides);
 		this.title = new H3<>().addClass(Title);
 		this.prev = new Link<>().addClass(Prev);
+		this.prev.setText("&laquo;");
 		this.next = new Link<>().addClass(Next);
+		this.next.setText("&raquo;");
 		this.close = new Link<>().addClass(Close);
+		this.close.setText("&times;");
 		this.playPause = new Link<>().addClass(Play_Plause);
 		this.indicator = new List<>(true).addClass(Indicator);
 
@@ -68,6 +72,8 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 		this.contents.addClass(blueimpgallery_links);
 
 		addClass(BlueImpGalleryClasses.BlueImp_Gallery);
+		feature = new BlueImpGalleryFeature(this);
+		addFeature(feature);
 	}
 
 	/**
@@ -93,6 +99,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 			this.description = new Paragraph<>(description);
 		}
 		Image<?> image = new Image<>(thumbnailUrl == null ? imageUrl : thumbnailUrl).addAttribute(GlobalAttributes.Title, altTitle);
+		image.addStyle("width:75px;height:75px;");
 		link.add(image);
 
 		contents.add(link);
@@ -261,11 +268,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	@NotNull
 	public BlueImpGalleryOptions<?> getOptions()
 	{
-		if (options == null)
-		{
-			options = new BlueImpGalleryOptions();
-		}
-		return options;
+		return getFeature().getOptions();
 	}
 
 	/**
@@ -276,9 +279,21 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setOptions(BlueImpGalleryOptions options)
+	public J setOptions(@NotNull BlueImpGalleryOptions options)
 	{
-		this.options = options;
+		getFeature().setOptions(options);
 		return (J) this;
+	}
+
+	/**
+	 * Method getFeature returns the feature of this BlueImpGallery object.
+	 * <p>
+	 * The feature to initialize this gallery
+	 *
+	 * @return the feature (type BlueImpGalleryFeature) of this BlueImpGallery object.
+	 */
+	public BlueImpGalleryFeature getFeature()
+	{
+		return feature;
 	}
 }

@@ -265,7 +265,6 @@ public class BlueImpGalleryOptions<J extends BlueImpGalleryOptions<J>>
 	 * default undefined
 	 */
 	private Integer slideshowTransitionSpeed;
-
 	/**
 	 * Indicator options
 	 * The following are the additional default options set for the slide position indicator:
