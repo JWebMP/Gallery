@@ -10,6 +10,10 @@ import javax.validation.constraints.NotNull;
 public class BlueImpGalleryPageConfigurator
 		implements IPageConfigurator
 {
+	/**
+	 * If this configurator is enabled
+	 */
+	private static boolean enabled = true;
 	private static BlueImpGalleryDescriptionFeature galleryDescriptionFeature;
 	/**
 	 * To include the indicators
@@ -31,6 +35,31 @@ public class BlueImpGalleryPageConfigurator
 	 * To include the jquery plugin - default true
 	 */
 	private static boolean includeJQuery = true;
+
+	/**
+	 * Method isEnabled returns the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @return the enabled (type boolean) of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static boolean isEnabled()
+	{
+		return BlueImpGalleryPageConfigurator.enabled;
+	}
+
+	/**
+	 * Method setEnabled sets the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @param mustEnable
+	 * 		the enabled of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static void setEnabled(boolean mustEnable)
+	{
+		BlueImpGalleryPageConfigurator.enabled = mustEnable;
+	}
 
 	/**
 	 * Method isIncludeIndicators returns the includeIndicators of this BlueImpGalleryPageConfigurator object.
@@ -242,5 +271,11 @@ public class BlueImpGalleryPageConfigurator
 
 		}
 		return page;
+	}
+
+	@Override
+	public boolean enabled()
+	{
+		return BlueImpGalleryPageConfigurator.enabled;
 	}
 }
