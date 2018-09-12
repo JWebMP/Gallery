@@ -7,7 +7,7 @@ import com.jwebmp.plugins.blueimp.gallery.BlueImpGallery;
 import com.jwebmp.plugins.blueimp.gallery.BlueImpVideoCarousel;
 import org.junit.jupiter.api.Test;
 
-class BlueImpGalleryOptionsTest
+public class BlueImpGalleryOptionsTest
 {
 	@Test
 	void testCamelCase()

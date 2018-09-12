@@ -94,13 +94,14 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		Link<?> link = new Link<>(imageUrl).addAttribute(GlobalAttributes.Title, altTitle);
 		link.addAttribute(Data_Gallery.toString(), getID(true));
-		if (description != null)
-		{
-			this.description = new Paragraph<>(description);
-		}
 		Image<?> image = new Image<>(thumbnailUrl == null ? imageUrl : thumbnailUrl).addAttribute(GlobalAttributes.Title, altTitle);
 		image.addStyle("width:75px;height:75px;");
 		link.add(image);
+		if (description != null)
+		{
+			this.description = new Paragraph<>(description);
+			link.add(this.description);
+		}
 
 		contents.add(link);
 		return link;
@@ -225,15 +226,25 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 		return contents;
 	}
 
+	public Paragraph getDescription()
+	{
+		return description;
+	}
+
+	@SuppressWarnings("unchecked")
+	@NotNull
+	public J setDescription(Paragraph description)
+	{
+		this.description = description;
+		return (J) this;
+	}
+
 	@Override
 	public void init()
 	{
-		if (!isInitialized())
+		if (!isInitialized() && getParent() != null)
 		{
-			if (getParent() != null)
-			{
-				getParent().add(this.contents);
-			}
+			getParent().add(this.contents);
 		}
 		super.init();
 	}
@@ -295,5 +306,17 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	public BlueImpGalleryFeature getFeature()
 	{
 		return feature;
+	}
+
+	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		return super.equals(o);
 	}
 }

@@ -32,6 +32,18 @@ public class BlueImpGalleryFeature
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		return super.equals(obj);
+	}
+
+	@Override
 	protected void assignFunctionsToComponent()
 	{
 		BlueImpGallery gallery = getComponent();
@@ -43,13 +55,13 @@ public class BlueImpGalleryFeature
 
 		getOptions().setContainer(galleryId);
 
-		String eventHandler = "document.getElementById('" + llinksId + "').onclick = function (event) {\n" +
-		                      "    event = event || window.event;\n" +
-		                      "    var target = event.target || event.srcElement,\n" +
-		                      "        link = target.src ? target.parentNode : target,\n" +
-		                      "        options = {index: link, event: event},\n" +
-		                      "        links = this.getElementsByTagName('a');\n" +
-		                      "    blueimp.Gallery(links, options);\n" +
+		String eventHandler = "document.getElementById('" + llinksId + "').onclick = function (event) {" + getNewLine() +
+		                      "    event = event || window.event;" + getNewLine() +
+		                      "    var target = event.target || event.srcElement," + getNewLine() +
+		                      "        link = target.src ? target.parentNode : target," + getNewLine() +
+		                      "        options = {index: link, event: event}," + getNewLine() +
+		                      "        links = this.getElementsByTagName('a');" + getNewLine() +
+		                      "    blueimp.Gallery(links, options);" + getNewLine() +
 		                      "};";
 		sb.append(eventHandler);
 
