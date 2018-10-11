@@ -154,9 +154,9 @@ public class BlueImpGalleryOptions<J extends BlueImpGalleryOptions<J>>
 	/**
 	 * Defines if images should be stretched to fill the available space
 	 * while maintaining their aspect ratio (will only be enabled for browsers
-	 * supporting background-size="contain", which excludes IE < 9).
+	 * supporting background-size="contain", which excludes IE &lt; 9).
 	 * Set to "cover", to make images cover all available space (requires
-	 * support for background-size="cover", which excludes IE < 9)
+	 * support for background-size="cover", which excludes IE &lt; 9)
 	 * default false
 	 */
 	private Boolean stretchImages;

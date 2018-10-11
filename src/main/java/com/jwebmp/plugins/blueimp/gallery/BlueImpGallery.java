@@ -57,19 +57,19 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 
 	public BlueImpGallery()
 	{
-		this.slides = new DivSimple<>().addClass(Slides);
-		this.title = new H3<>().addClass(Title);
-		this.prev = new Link<>().addClass(Prev);
-		this.prev.setText("&laquo;");
-		this.next = new Link<>().addClass(Next);
-		this.next.setText("&raquo;");
-		this.close = new Link<>().addClass(Close);
-		this.close.setText("&times;");
-		this.playPause = new Link<>().addClass(Play_Plause);
-		this.indicator = new List<>(true).addClass(Indicator);
+		slides = new DivSimple<>().addClass(Slides);
+		title = new H3<>().addClass(Title);
+		prev = new Link<>().addClass(Prev);
+		prev.setText("&laquo;");
+		next = new Link<>().addClass(Next);
+		next.setText("&raquo;");
+		close = new Link<>().addClass(Close);
+		close.setText("&times;");
+		playPause = new Link<>().addClass(Play_Plause);
+		indicator = new List<>(true).addClass(Indicator);
 
-		this.contents = new DivSimple<>();
-		this.contents.addClass(blueimpgallery_links);
+		contents = new DivSimple<>();
+		contents.addClass(blueimpgallery_links);
 
 		addClass(BlueImpGalleryClasses.BlueImp_Gallery);
 		feature = new BlueImpGalleryFeature(this);
@@ -88,7 +88,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 * @param altTitle
 	 * 		of type String
 	 *
-	 * @return Link<?>
+	 * @return Link?
 	 */
 	public Link<?> addScreen(String imageUrl, String thumbnailUrl, String description, String altTitle)
 	{
@@ -135,7 +135,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 * <p>
 	 * The holder for the slides
 	 *
-	 * @return the slides (type DivSimple<?>) of this BlueImpGallery object.
+	 * @return the slides (type DivSimple ?) of this BlueImpGallery object.
 	 */
 	public DivSimple<?> getSlides()
 	{
@@ -147,7 +147,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 * <p>
 	 * The holder for the title
 	 *
-	 * @return the title (type H3<?>) of this BlueImpGallery object.
+	 * @return the title (type H3?) of this BlueImpGallery object.
 	 */
 	public H3<?> getTitle()
 	{
@@ -159,7 +159,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 * <p>
 	 * The link object for previous
 	 *
-	 * @return the prev (type Link<?>) of this BlueImpGallery object.
+	 * @return the prev (type Link ?) of this BlueImpGallery object.
 	 */
 	public Link<?> getPrev()
 	{
@@ -171,7 +171,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 * <p>
 	 * The link object for next
 	 *
-	 * @return the next (type Link<?>) of this BlueImpGallery object.
+	 * @return the next (type Link ? ) of this BlueImpGallery object.
 	 */
 	public Link<?> getNext()
 	{
@@ -183,7 +183,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 * <p>
 	 * The link object for close
 	 *
-	 * @return the close (type Link<?>) of this BlueImpGallery object.
+	 * @return the close (type Link ?) of this BlueImpGallery object.
 	 */
 	public Link<?> getClose()
 	{
@@ -195,7 +195,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 * <p>
 	 * The link object for play/pause
 	 *
-	 * @return the playPause (type Link<?>) of this BlueImpGallery object.
+	 * @return the playPause (type Link ?) of this BlueImpGallery object.
 	 */
 	public Link<?> getPlayPause()
 	{
@@ -219,7 +219,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 * <p>
 	 * The contents div that gets rendered.
 	 *
-	 * @return the contents (type DivSimple<?>) of this BlueImpGallery object.
+	 * @return the contents (type DivSimple ?) of this BlueImpGallery object.
 	 */
 	public DivSimple<?> getContents()
 	{
@@ -244,7 +244,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		if (!isInitialized() && getParent() != null)
 		{
-			getParent().add(this.contents);
+			getParent().add(contents);
 		}
 		super.init();
 	}

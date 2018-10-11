@@ -30,7 +30,7 @@ public class BlueImpVideoSourcesJSONContainer<J extends BlueImpVideoSourcesJSONC
 	 * <p>
 	 * A list of all the sources
 	 *
-	 * @return the sourcesJSONS (type Set<BlueImpVideoSourcesJSON>) of this BlueImpVideoSourcesJSONContainer object.
+	 * @return the sourcesJSONS (type Set BlueImpVideoSourcesJSON ) of this BlueImpVideoSourcesJSONContainer object.
 	 */
 	@NotNull
 	@JsonValue
