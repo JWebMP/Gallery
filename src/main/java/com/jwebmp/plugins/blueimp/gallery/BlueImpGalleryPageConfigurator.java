@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("unused")
 public class BlueImpGalleryPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<BlueImpGalleryPageConfigurator>
 {
 	/**
 	 * If this configurator is enabled
