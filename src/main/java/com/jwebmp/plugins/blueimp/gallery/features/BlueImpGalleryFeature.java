@@ -82,7 +82,7 @@ public class BlueImpGalleryFeature
 	 * @return
 	 */
 	@Override
-	protected BlueImpGallery getComponent()
+	public BlueImpGallery getComponent()
 	{
 		return (BlueImpGallery) super.getComponent();
 	}
