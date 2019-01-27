@@ -1,18 +1,12 @@
-import com.jwebmp.core.services.IPageConfigurator;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;
-import com.jwebmp.plugins.blueimp.gallery.BlueImpGalleryPageConfigurator;
-import com.jwebmp.plugins.blueimp.gallery.implementations.BlueImpGalleryExclusionsModule;
-
 module com.jwebmp.plugins.blueimp.gallery {
 	exports com.jwebmp.plugins.blueimp.gallery;
 	exports com.jwebmp.plugins.blueimp.gallery.options;
 	exports com.jwebmp.plugins.blueimp.gallery.features;
 
-	provides IPageConfigurator with BlueImpGalleryPageConfigurator;
+	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.blueimp.gallery.BlueImpGalleryPageConfigurator;
 
-	provides IGuiceScanModuleExclusions with BlueImpGalleryExclusionsModule;
-	provides IGuiceScanJarExclusions with BlueImpGalleryExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.blueimp.gallery.implementations.BlueImpGalleryExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.blueimp.gallery.implementations.BlueImpGalleryExclusionsModule;
 
 	requires com.jwebmp.core;
 	requires java.validation;
