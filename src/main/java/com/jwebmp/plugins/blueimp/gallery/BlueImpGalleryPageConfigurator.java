@@ -214,7 +214,7 @@ public class BlueImpGalleryPageConfigurator
 			BlueImpGalleryPageConfigurator.galleryDescriptionFeature = new BlueImpGalleryDescriptionFeature();
 		}
 
-		if (!page.isConfigured())
+		if (!page.isConfigured() && enabled())
 		{
 			JQueryPageConfigurator.setRequired(true);
 
