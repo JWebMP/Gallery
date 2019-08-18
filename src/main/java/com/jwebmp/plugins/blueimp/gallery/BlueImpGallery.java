@@ -240,6 +240,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public void init()
 	{
 		if (!isInitialized() && getParent() != null)
