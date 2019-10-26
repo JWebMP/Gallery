@@ -3,7 +3,7 @@ package com.jwebmp.plugins.blueimp.gallery;
 import com.jwebmp.core.base.html.Link;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.core.base.html.attributes.LinkAttributes;
-import com.jwebmp.logger.LogFactory;
+import com.guicedee.logger.LogFactory;
 import com.jwebmp.plugins.blueimp.gallery.options.BlueImpVideoSourcesJSON;
 import com.jwebmp.plugins.blueimp.gallery.options.BlueImpVideoSourcesJSONContainer;
 

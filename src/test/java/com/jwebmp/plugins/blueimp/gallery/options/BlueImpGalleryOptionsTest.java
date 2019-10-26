@@ -2,7 +2,7 @@ package com.jwebmp.plugins.blueimp.gallery.options;
 
 import com.google.common.base.CaseFormat;
 import com.jwebmp.core.Page;
-import com.jwebmp.logger.logging.LogColourFormatter;
+import com.guicedee.logger.logging.LogColourFormatter;
 import com.jwebmp.plugins.blueimp.gallery.BlueImpGallery;
 import com.jwebmp.plugins.blueimp.gallery.BlueImpVideoCarousel;
 import org.junit.jupiter.api.Test;
