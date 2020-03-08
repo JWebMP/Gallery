@@ -1,6 +1,5 @@
 package com.jwebmp.plugins.blueimp.gallery.implementations;
 
-import com.guicedee.guicedinjection.interfaces.IGuiceScanJarExclusions;
 import com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions;
 
 import javax.validation.constraints.NotNull;
@@ -8,17 +7,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BlueImpGalleryExclusionsModule
-		implements IGuiceScanModuleExclusions<BlueImpGalleryExclusionsModule>,
-				           IGuiceScanJarExclusions<BlueImpGalleryExclusionsModule>
+		implements IGuiceScanModuleExclusions<BlueImpGalleryExclusionsModule>
 {
-
-	@Override
-	public @NotNull Set<String> excludeJars()
-	{
-		Set<String> strings = new HashSet<>();
-		strings.add("jwebmp-blueimp-gallery-*");
-		return strings;
-	}
 
 	@Override
 	public @NotNull Set<String> excludeModules()
