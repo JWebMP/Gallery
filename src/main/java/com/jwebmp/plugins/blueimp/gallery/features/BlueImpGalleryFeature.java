@@ -55,23 +55,26 @@ public class BlueImpGalleryFeature
 
 		getOptions().setContainer(galleryId);
 
-		String eventHandler = "document.getElementById('" + llinksId + "').onclick = function (event) {" + getNewLine() +
+		String eventHandler = "$(document).ready(function(){" + getNewLine() +
+		                      "document.getElementById('links').onclick = function (event) {" + getNewLine() +
 		                      "    event = event || window.event;" + getNewLine() +
 		                      "    var target = event.target || event.srcElement," + getNewLine() +
 		                      "        link = target.src ? target.parentNode : target," + getNewLine() +
 		                      "        options = {index: link, event: event}," + getNewLine() +
 		                      "        links = this.getElementsByTagName('a');" + getNewLine() +
 		                      "    blueimp.Gallery(links, options);" + getNewLine() +
-		                      "};";
+		                      "};" + getNewLine();
 		sb.append(eventHandler);
 
 		if (isRenderInitializer())
 		{
 			sb.append("blueimp.Gallery(" + getNewLine() +
-			          "document.getElementById('" + llinksId + "').getElementsByTagName('a')," + getNewLine() +
+			          "document.getElementById('links').getElementsByTagName('a')," + getNewLine() +
 			          getOptions() +
 			          ");");
 		}
+
+		sb.append("});");
 
 		addQuery(sb.toString());
 	}
