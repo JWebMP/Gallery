@@ -9,7 +9,7 @@ module com.jwebmp.plugins.blueimp.gallery {
 
 	requires com.jwebmp.core;
 	requires java.validation;
-	requires com.fasterxml.jackson.annotation;
+
 	requires com.guicedee.logmaster;
 	requires java.logging;
 	requires com.guicedee.guicedinjection;
