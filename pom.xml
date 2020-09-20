@@ -28,7 +28,6 @@
         <dependency>
             <groupId>com.jwebmp.core</groupId>
             <artifactId>jwebmp-core</artifactId>
-            <type>jar</type>
         </dependency>
     </dependencies>
 
