@@ -2,7 +2,7 @@ package com.jwebmp.plugins.blueimp.gallery.options;
 
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * A sources reference for a video screen in the carousel

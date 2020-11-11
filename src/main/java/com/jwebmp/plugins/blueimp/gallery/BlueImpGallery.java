@@ -5,7 +5,7 @@ import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.plugins.blueimp.gallery.features.BlueImpGalleryFeature;
 import com.jwebmp.plugins.blueimp.gallery.options.BlueImpGalleryOptions;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 import static com.jwebmp.plugins.blueimp.gallery.BlueImpGalleryClasses.*;
 
