@@ -8,7 +8,7 @@ module com.jwebmp.plugins.blueimp.gallery {
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.blueimp.gallery.implementations.BlueImpGalleryExclusionsModule;
 
 	requires com.jwebmp.core;
-	requires java.validation;
+	requires jakarta.validation;
 
 	requires com.guicedee.logmaster;
 	requires java.logging;
