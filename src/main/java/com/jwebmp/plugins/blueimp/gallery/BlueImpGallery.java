@@ -2,6 +2,8 @@ package com.jwebmp.plugins.blueimp.gallery;
 
 import com.jwebmp.core.base.html.*;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.blueimp.gallery.features.BlueImpGalleryFeature;
 import com.jwebmp.plugins.blueimp.gallery.options.BlueImpGalleryOptions;
 
@@ -245,7 +247,8 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		if (!isInitialized() && getParent() != null)
 		{
-			getParent().add(contents);
+			IComponentHierarchyBase<GlobalChildren, ?> parent = (IComponentHierarchyBase<GlobalChildren, ?>) getParent();
+			parent.add(contents);
 		}
 		super.init();
 	}

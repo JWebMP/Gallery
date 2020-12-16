@@ -6,7 +6,7 @@ import com.jwebmp.core.services.IPageConfigurator;
 
 import jakarta.validation.constraints.NotNull;
 
-@SuppressWarnings("unused")
+
 public class BlueImpGalleryPageConfigurator
 		implements IPageConfigurator<BlueImpGalleryPageConfigurator>
 {

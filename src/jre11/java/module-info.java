@@ -1,3 +1,5 @@
+import com.jwebmp.plugins.blueimp.gallery.implementations.BlueImpGalleryInclusionModule;
+
 module com.jwebmp.plugins.blueimp.gallery {
 	exports com.jwebmp.plugins.blueimp.gallery;
 	exports com.jwebmp.plugins.blueimp.gallery.options;
@@ -6,7 +8,8 @@ module com.jwebmp.plugins.blueimp.gallery {
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.blueimp.gallery.BlueImpGalleryPageConfigurator;
 
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.blueimp.gallery.implementations.BlueImpGalleryExclusionsModule;
-
+	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleInclusions with BlueImpGalleryInclusionModule;
+	
 	requires com.jwebmp.core;
 	requires jakarta.validation;
 

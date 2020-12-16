@@ -12,7 +12,7 @@ import jakarta.validation.constraints.NotNull;
  */
 @SuppressWarnings("MissingClassJavaDoc")
 public class BlueImpGalleryFeature
-		extends Feature<GlobalFeatures, BlueImpGalleryOptions, BlueImpGalleryFeature>
+		extends Feature<GlobalFeatures, BlueImpGalleryOptions<?>, BlueImpGalleryFeature>
 {
 	/**
 	 * Whether or not to render the initializer
