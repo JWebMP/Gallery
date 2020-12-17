@@ -24,7 +24,7 @@ public class BlueImpGalleryOptionsTest
 	void testPage()
 	{
 		LogColourFormatter.setRenderBlack(false);
-		Page p = new Page();
+		Page<?> p = new Page();
 
 		BlueImpGallery instance = new BlueImpGallery();
 		BlueImpGalleryOptions options = instance.getOptions();
@@ -44,7 +44,7 @@ public class BlueImpGalleryOptionsTest
 	void testVideoPage()
 	{
 		LogColourFormatter.setRenderBlack(false);
-		Page p = new Page();
+		Page<?> p = new Page();
 
 		BlueImpVideoCarousel instance = new BlueImpVideoCarousel();
 		BlueImpGalleryOptions options = instance.getOptions();
@@ -63,7 +63,7 @@ public class BlueImpGalleryOptionsTest
 	void testYouTube()
 	{
 		LogColourFormatter.setRenderBlack(false);
-		Page p = new Page();
+		Page<?> p = new Page();
 
 		BlueImpVideoCarousel instance = new BlueImpVideoCarousel();
 		BlueImpGalleryOptions options = instance.getOptions();
