@@ -32,27 +32,27 @@ public enum BlueImpGalleryReferencePool
 	/**
 	 * Gallery Reference
 	 */
-	GalleryReference(new JavascriptReference("GalleryReference", 2.33, "bower_components/blueimpgallery/js/blueimp-gallery.min.js"),
-	                 new CSSReference("GalleryReference", 2.33, "bower_components/blueimpgallery/css/blueimp-gallery.min.css")),
+	GalleryReference(new JavascriptReference("GalleryReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery.min.js"),
+	                 new CSSReference("GalleryReference", 2.33, "bower_components/blueimp-gallery/css/blueimp-gallery.min.css",150)),
 
-	GalleryCustomCSSReference(null,
-	                          new CSSReference("GalleryCustomReference", 1.0, "blueimpgallerycustom/gallerydescriptions.min.css")),
+/*	GalleryCustomCSSReference(null,
+	                          new CSSReference("GalleryCustomReference", 1.0, "blueimpgallerycustom/gallerydescriptions.min.css")),*/
 
-	GalleryIndicatorReference(new JavascriptReference("GalleryIndicatorReference", 2.33, "bower_components/blueimpgallery/js/blueimp-gallery-indicator.min.js"),
-	                          new CSSReference("GalleryIndicatorReference", 2.33, "bower_components/blueimpgallery/css/blueimp-gallery-indicator.min.css")),
+	GalleryIndicatorReference(new JavascriptReference("GalleryIndicatorReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery-indicator.min.js"),
+	                          new CSSReference("GalleryIndicatorReference", 2.33, "bower_components/blueimp-gallery/css/blueimp-gallery-indicator.min.css",155)),
 
-	GalleryVideoReference(new JavascriptReference("GalleryVideoReference", 2.33, "bower_components/blueimpgallery/js/blueimp-gallery-video.min.js"),
-	                      new CSSReference("GalleryVideoReference", 2.33, "bower_components/blueimpgallery/css/blueimp-gallery-video.min.css")),
-
-	GalleryVimeoReference(new JavascriptReference("GalleryVimeoReference", 2.33, "bower_components/blueimpgallery/js/blueimp-gallery-vimeo.min.js"),
+	GalleryVideoReference(new JavascriptReference("GalleryVideoReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery-video.min.js"),
+	                      new CSSReference("GalleryVideoReference", 2.33, "bower_components/blueimp-gallery/css/blueimp-gallery-video.min.css",160)),
+	
+	GalleryVimeoReference(new JavascriptReference("GalleryVimeoReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery-vimeo.min.js"),
 	                      null),
 
-	GalleryYoutubeReference(new JavascriptReference("GalleryYoutubeReference", 2.33, "bower_components/blueimpgallery/js/blueimp-gallery-youtube.min.js"),
+	GalleryYoutubeReference(new JavascriptReference("GalleryYoutubeReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery-youtube.min.js"),
 	                        null),
 
-	GalleryHelperReference(new JavascriptReference("GalleryHelperReference", 2.33, "bower_components/blueimpgallery/js/blueimp-helper.min.js"),
+	GalleryHelperReference(new JavascriptReference("GalleryHelperReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-helper.min.js"),
 	                       null),
-	JQueryGalleryReference(new JavascriptReference("GalleryJQueryReference", 2.33, "bower_components/blueimpgallery/js/jquery.blueimp-gallery.min.js"),
+	JQueryGalleryReference(new JavascriptReference("GalleryJQueryReference", 2.33, "bower_components/blueimp-gallery/js/jquery.blueimp-gallery.min.js"),
 	                       null),
 	;
 	/**

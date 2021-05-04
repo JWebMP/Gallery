@@ -13,9 +13,7 @@ public enum BlueImpGalleryClasses
 	BlueImp_Gallery,
 	BlueImp_Gallery_Controls,
 	BlueImp_Gallery_Carousel,
-	blueimpgallery_links,
 
-	Data_blueimp_gallery,
 	Data_Gallery,
 
 	Slides,

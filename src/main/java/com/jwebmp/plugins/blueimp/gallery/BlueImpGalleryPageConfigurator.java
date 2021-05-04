@@ -35,7 +35,7 @@ public class BlueImpGalleryPageConfigurator
 	 * To include the jquery plugin - default true
 	 */
 	private static boolean includeJQuery = true;
-
+	
 	/**
 	 * Method isEnabled returns the enabled of this AngularAnimatedChangePageConfigurator object.
 	 * <p>
@@ -47,20 +47,19 @@ public class BlueImpGalleryPageConfigurator
 	{
 		return BlueImpGalleryPageConfigurator.enabled;
 	}
-
+	
 	/**
 	 * Method setEnabled sets the enabled of this AngularAnimatedChangePageConfigurator object.
 	 * <p>
 	 * If this configurator is enabled
 	 *
-	 * @param mustEnable
-	 * 		the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * @param mustEnable the enabled of this AngularAnimatedChangePageConfigurator object.
 	 */
 	public static void setEnabled(boolean mustEnable)
 	{
 		BlueImpGalleryPageConfigurator.enabled = mustEnable;
 	}
-
+	
 	/**
 	 * Method isIncludeIndicators returns the includeIndicators of this BlueImpGalleryPageConfigurator object.
 	 * <p>
@@ -72,20 +71,19 @@ public class BlueImpGalleryPageConfigurator
 	{
 		return BlueImpGalleryPageConfigurator.includeIndicators;
 	}
-
+	
 	/**
 	 * Method setIncludeIndicators sets the includeIndicators of this BlueImpGalleryPageConfigurator object.
 	 * <p>
 	 * To include the indicators
 	 *
-	 * @param includeIndicators
-	 * 		the includeIndicators of this BlueImpGalleryPageConfigurator object.
+	 * @param includeIndicators the includeIndicators of this BlueImpGalleryPageConfigurator object.
 	 */
 	public static void setIncludeIndicators(boolean includeIndicators)
 	{
 		BlueImpGalleryPageConfigurator.includeIndicators = includeIndicators;
 	}
-
+	
 	/**
 	 * Method isIncludeVideo returns the includeVideo of this BlueImpGalleryPageConfigurator object.
 	 * <p>
@@ -101,20 +99,19 @@ public class BlueImpGalleryPageConfigurator
 		}
 		return BlueImpGalleryPageConfigurator.includeVideo;
 	}
-
+	
 	/**
 	 * Method setIncludeVideo sets the includeVideo of this BlueImpGalleryPageConfigurator object.
 	 * <p>
 	 * To include the video
 	 *
-	 * @param includeVideo
-	 * 		the includeVideo of this BlueImpGalleryPageConfigurator object.
+	 * @param includeVideo the includeVideo of this BlueImpGalleryPageConfigurator object.
 	 */
 	public static void setIncludeVideo(boolean includeVideo)
 	{
 		BlueImpGalleryPageConfigurator.includeVideo = includeVideo;
 	}
-
+	
 	/**
 	 * Method isIncludeVimeo returns the includeVimeo of this BlueImpGalleryPageConfigurator object.
 	 * <p>
@@ -126,14 +123,13 @@ public class BlueImpGalleryPageConfigurator
 	{
 		return BlueImpGalleryPageConfigurator.includeVimeo;
 	}
-
+	
 	/**
 	 * Method setIncludeVimeo sets the includeVimeo of this BlueImpGalleryPageConfigurator object.
 	 * <p>
 	 * To include the vimeo addon
 	 *
-	 * @param includeVimeo
-	 * 		the includeVimeo of this BlueImpGalleryPageConfigurator object.
+	 * @param includeVimeo the includeVimeo of this BlueImpGalleryPageConfigurator object.
 	 */
 	public static void setIncludeVimeo(boolean includeVimeo)
 	{
@@ -143,7 +139,7 @@ public class BlueImpGalleryPageConfigurator
 		}
 		BlueImpGalleryPageConfigurator.includeVimeo = includeVimeo;
 	}
-
+	
 	/**
 	 * Method isIncludeYouTube returns the includeYouTube of this BlueImpGalleryPageConfigurator object.
 	 * <p>
@@ -155,14 +151,13 @@ public class BlueImpGalleryPageConfigurator
 	{
 		return BlueImpGalleryPageConfigurator.includeYouTube;
 	}
-
+	
 	/**
 	 * Method setIncludeYouTube sets the includeYouTube of this BlueImpGalleryPageConfigurator object.
 	 * <p>
 	 * To include the youtube plugin
 	 *
-	 * @param includeYouTube
-	 * 		the includeYouTube of this BlueImpGalleryPageConfigurator object.
+	 * @param includeYouTube the includeYouTube of this BlueImpGalleryPageConfigurator object.
 	 */
 	public static void setIncludeYouTube(boolean includeYouTube)
 	{
@@ -172,7 +167,7 @@ public class BlueImpGalleryPageConfigurator
 		}
 		BlueImpGalleryPageConfigurator.includeYouTube = includeYouTube;
 	}
-
+	
 	/**
 	 * Method isIncludeJQuery returns the includeJQuery of this BlueImpGalleryPageConfigurator object.
 	 * <p>
@@ -184,95 +179,88 @@ public class BlueImpGalleryPageConfigurator
 	{
 		return BlueImpGalleryPageConfigurator.includeJQuery;
 	}
-
+	
 	/**
 	 * Method setIncludeJQuery sets the includeJQuery of this BlueImpGalleryPageConfigurator object.
 	 * <p>
 	 * To include the jquery plugin
 	 *
-	 * @param includeJQuery
-	 * 		the includeJQuery of this BlueImpGalleryPageConfigurator object.
+	 * @param includeJQuery the includeJQuery of this BlueImpGalleryPageConfigurator object.
 	 */
 	public static void setIncludeJQuery(boolean includeJQuery)
 	{
 		BlueImpGalleryPageConfigurator.includeJQuery = includeJQuery;
 	}
-
+	
 	/**
 	 * Configures the given page for the parameters
 	 *
-	 * @param page
-	 * 		The page incoming
-	 *
+	 * @param page The page incoming
 	 * @return The original page incoming or a new page, never null
 	 */
 	@Override
 	public @NotNull Page<?> configure(Page<?> page)
 	{
-		if (BlueImpGalleryPageConfigurator.galleryDescriptionFeature == null)
+	/*	if (BlueImpGalleryPageConfigurator.galleryDescriptionFeature == null)
 		{
 			BlueImpGalleryPageConfigurator.galleryDescriptionFeature = new BlueImpGalleryDescriptionFeature();
-		}
-
+		}*/
+		
 		if (!page.isConfigured() && enabled())
 		{
 			JQueryPageConfigurator.setRequired(true);
-
+			
 			page.addCssReference(BlueImpGalleryReferencePool.GalleryReference.getCssReference());
-			page.addCssReference(BlueImpGalleryReferencePool.GalleryCustomCSSReference.getCssReference());
-
-			page.addFeature(BlueImpGalleryPageConfigurator.galleryDescriptionFeature);
-
-			page.addJavaScriptReference(BlueImpGalleryReferencePool.GalleryReference.getJavaScriptReference()
-			                                                                        .setSortOrder(210));
-			if (BlueImpGalleryPageConfigurator.includeIndicators)
-			{
-				page.getBody()
-				    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryIndicatorReference.getJavaScriptReference()
-				                                                                                 .setSortOrder(211));
-
-				page.getBody()
-				    .addCssReference(BlueImpGalleryReferencePool.GalleryIndicatorReference.getCssReference()
-				                                                                          .setSortOrder(211));
-			}
-			if (BlueImpGalleryPageConfigurator.includeVideo)
-			{
-				page.getBody()
-				    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryVideoReference.getJavaScriptReference()
-				                                                                             .setSortOrder(212));
-				page.getBody()
-				    .addCssReference(BlueImpGalleryReferencePool.GalleryVideoReference.getCssReference()
-				                                                                      .setSortOrder(213));
-			}
-			if (BlueImpGalleryPageConfigurator.includeVimeo)
-			{
-				page.getBody()
-				    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryVimeoReference.getJavaScriptReference()
-				                                                                             .setSortOrder(214));
-			}
-
-			if (BlueImpGalleryPageConfigurator.includeYouTube)
-			{
-				page.getBody()
-				    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryYoutubeReference.getJavaScriptReference()
-				                                                                               .setSortOrder(215));
-			}
-
-			if (BlueImpGalleryPageConfigurator.includeJQuery)
+			//page.addCssReference(BlueImpGalleryReferencePool.GalleryCustomCSSReference.getCssReference());
+			
+			//	page.addFeature(BlueImpGalleryPageConfigurator.galleryDescriptionFeature);
+			if (includeJQuery)
 			{
 				page.getBody()
 				    .addJavaScriptReference(BlueImpGalleryReferencePool.JQueryGalleryReference.getJavaScriptReference()
-				                                                                              .setSortOrder(216));
+				                                                                              .setSortOrder(210));
 			}
-
+			else
+			{
+				page.addJavaScriptReference(BlueImpGalleryReferencePool.GalleryReference.getJavaScriptReference()
+				                                                                        .setSortOrder(210));
+			}
+			
+			page.getBody()
+			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryIndicatorReference.getJavaScriptReference()
+			                                                                                 .setSortOrder(211));
+			
+			page.getBody()
+			    .addCssReference(BlueImpGalleryReferencePool.GalleryIndicatorReference.getCssReference()
+			                                                                          .setSortOrder(211));
+			
+			
+			
+			page.getBody()
+			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryVideoReference.getJavaScriptReference()
+			                                                                             .setSortOrder(212));
+			page.getBody()
+			    .addCssReference(BlueImpGalleryReferencePool.GalleryVideoReference.getCssReference()
+			                                                                      .setSortOrder(213));
+			
+			
+			page.getBody()
+			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryVimeoReference.getJavaScriptReference()
+			                                                                             .setSortOrder(214));
+			
+			
+			page.getBody()
+			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryYoutubeReference.getJavaScriptReference()
+			                                                                               .setSortOrder(215));
+			
 			page.getBody()
 			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryHelperReference.getJavaScriptReference()
 			                                                                              .setSortOrder(209));
-
+			
 		}
 		return page;
 	}
-
+	
 	@Override
 	public boolean enabled()
 	{

@@ -1,17 +1,17 @@
 package com.jwebmp.plugins.blueimp.gallery;
 
 import com.jwebmp.core.base.html.*;
-import com.jwebmp.core.base.html.attributes.GlobalAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
-import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.plugins.blueimp.gallery.features.BlueImpGalleryFeature;
 import com.jwebmp.plugins.blueimp.gallery.options.BlueImpGalleryOptions;
-
 import jakarta.validation.constraints.NotNull;
 
 import static com.jwebmp.plugins.blueimp.gallery.BlueImpGalleryClasses.*;
 
-@SuppressWarnings("MissingClassJavaDoc")
+/**
+ * The configuration blue imp gallery, to be placed on the body on a page, and referenced by the display
+ * @param <J>
+ */
+@SuppressWarnings({"MissingClassJavaDoc", "UnusedReturnValue"})
 public class BlueImpGallery<J extends BlueImpGallery<J>>
 		extends DivSimple<J>
 {
@@ -42,12 +42,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	/**
 	 * The ordered list for indicator
 	 */
-	private final List indicator;
-	/**
-	 * The contents div that gets rendered.
-	 * You must add this object and the contents to the parent object
-	 */
-	private final DivSimple<?> contents;
+	private final List<?, ?, ?, ?> indicator;
 	/**
 	 * The feature to initialize this gallery
 	 */
@@ -55,23 +50,41 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	/**
 	 * The description of the current slide/image
 	 */
-	private Paragraph description;
-
+	private Paragraph<?> description;
+	
 	public BlueImpGallery()
 	{
-		slides = new DivSimple<>().addClass(Slides);
+		slides = new DivSimple<>().addClass(Slides)
+		                          .addAttribute("aria-live", "polite");
 		title = new H3<>().addClass(Title);
-		prev = new Link<>().addClass(Prev);
+		prev = new Link<>().addClass(Prev)
+		                   .addAttribute("aria-controls", getID())
+		                   .addAttribute("aria-label", "previous slide")
+		                   .addAttribute("aria-keyshortcuts", "ArrowLeft")
+		;
 		prev.setText("&laquo;");
-		next = new Link<>().addClass(Next);
+		next = new Link<>().addClass(Next)
+		                   .addAttribute("aria-controls", getID())
+		                   .addAttribute("aria-label", "next slide")
+		                   .addAttribute("aria-keyshortcuts", "ArrowRight")
+		;
+		
 		next.setText("&raquo;");
 		close = new Link<>().addClass(Close);
-		close.setText("&times;");
+		close.setText("&times;")
+		     .addAttribute("aria-controls", getID())
+		     .addAttribute("aria-label", "close")
+		     .addAttribute("aria-keyshortcuts", "Escape")
+		;
 		playPause = new Link<>().addClass(Play_Plause);
+		playPause.addAttribute("aria-controls", getID())
+		         .addAttribute("aria-label", "play slideshow")
+		         .addAttribute("aria-keyshortcuts", "Space")
+		         .addAttribute("aria-pressed", "false")
+		         .addAttribute("role", "button")
+		;
+		
 		indicator = new List<>(true).addClass(Indicator);
-
-		contents = new DivSimple<>();
-		contents.addClass(blueimpgallery_links);
 
 		addClass(BlueImpGalleryClasses.BlueImp_Gallery);
 		feature = new BlueImpGalleryFeature(this);
@@ -79,42 +92,9 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	}
 
 	/**
-	 * Method addScreen ...
-	 *
-	 * @param imageUrl
-	 * 		of type String
-	 * @param thumbnailUrl
-	 * 		of type String
-	 * @param description
-	 * 		of type String
-	 * @param altTitle
-	 * 		of type String
-	 *
-	 * @return Link?
-	 */
-	public Link<?> addScreen(String imageUrl, String thumbnailUrl, String description, String altTitle)
-	{
-		Link<?> link = new Link<>(imageUrl).addAttribute(GlobalAttributes.Title, altTitle);
-		link.addAttribute(Data_Gallery.toString(), getID(true));
-		Image<?> image = new Image<>(thumbnailUrl == null ? imageUrl : thumbnailUrl).addAttribute(GlobalAttributes.Title, altTitle);
-		image.addStyle("width:75px;height:75px;");
-		link.add(image);
-		if (description != null)
-		{
-			this.description = new Paragraph<>(description);
-			link.add(this.description);
-		}
-
-		contents.add(link);
-		return link;
-	}
-
-	/**
 	 * Method setControls sets the controls of this BlueImpGallery object.
 	 *
-	 * @param enableControls
-	 * 		the controls of this BlueImpGallery object.
-	 *
+	 * @param enableControls the controls of this BlueImpGallery object.
 	 * @return J
 	 */
 	@SuppressWarnings("unchecked")
@@ -131,7 +111,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 		}
 		return (J) this;
 	}
-
+	
 	/**
 	 * Method getSlides returns the slides of this BlueImpGallery object.
 	 * <p>
@@ -143,7 +123,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		return slides;
 	}
-
+	
 	/**
 	 * Method getTitle returns the title of this BlueImpGallery object.
 	 * <p>
@@ -155,7 +135,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		return title;
 	}
-
+	
 	/**
 	 * Method getPrev returns the prev of this BlueImpGallery object.
 	 * <p>
@@ -167,7 +147,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		return prev;
 	}
-
+	
 	/**
 	 * Method getNext returns the next of this BlueImpGallery object.
 	 * <p>
@@ -179,7 +159,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		return next;
 	}
-
+	
 	/**
 	 * Method getClose returns the close of this BlueImpGallery object.
 	 * <p>
@@ -191,7 +171,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		return close;
 	}
-
+	
 	/**
 	 * Method getPlayPause returns the playPause of this BlueImpGallery object.
 	 * <p>
@@ -203,7 +183,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		return playPause;
 	}
-
+	
 	/**
 	 * Method getIndicator returns the indicator of this BlueImpGallery object.
 	 * <p>
@@ -211,46 +191,22 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	 *
 	 * @return the indicator (type List) of this BlueImpGallery object.
 	 */
-	public List getIndicator()
+	public List<?, ?, ?, ?> getIndicator()
 	{
 		return indicator;
 	}
-
-	/**
-	 * Method getContents returns the contents of this BlueImpGallery object.
-	 * <p>
-	 * The contents div that gets rendered.
-	 *
-	 * @return the contents (type DivSimple ?) of this BlueImpGallery object.
-	 */
-	public DivSimple<?> getContents()
-	{
-		return contents;
-	}
-
-	public Paragraph getDescription()
+	
+	public Paragraph<?> getDescription()
 	{
 		return description;
 	}
-
+	
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setDescription(Paragraph description)
+	public J setDescription(Paragraph<?> description)
 	{
 		this.description = description;
 		return (J) this;
-	}
-
-	@Override
-	@SuppressWarnings("unchecked")
-	public void init()
-	{
-		if (!isInitialized() && getParent() != null)
-		{
-			IComponentHierarchyBase<GlobalChildren, ?> parent = (IComponentHierarchyBase<GlobalChildren, ?>) getParent();
-			parent.add(contents);
-		}
-		super.init();
 	}
 
 	/**
@@ -263,8 +219,8 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 		{
 			getOptions().toAttributes()
 			            .forEach((key, value) ->
-					                     addAttribute("data-" + key, value));
-
+					            addAttribute("data-" + key, value));
+			
 			add(slides);
 			add(title);
 			add(prev);
@@ -275,7 +231,7 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 		}
 		super.preConfigure();
 	}
-
+	
 	/**
 	 * @see com.jwebmp.core.base.ComponentFeatureBase#getOptions()
 	 */
@@ -285,21 +241,19 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		return getFeature().getOptions();
 	}
-
+	
 	/**
-	 * @param options
-	 * 		a new options object
-	 *
+	 * @param options a new options object
 	 * @return The output
 	 */
 	@SuppressWarnings("unchecked")
 	@NotNull
-	public J setOptions(@NotNull BlueImpGalleryOptions options)
+	public J setOptions(@NotNull BlueImpGalleryOptions<?> options)
 	{
 		getFeature().setOptions(options);
 		return (J) this;
 	}
-
+	
 	/**
 	 * Method getFeature returns the feature of this BlueImpGallery object.
 	 * <p>
@@ -311,13 +265,13 @@ public class BlueImpGallery<J extends BlueImpGallery<J>>
 	{
 		return feature;
 	}
-
+	
 	@Override
 	public int hashCode()
 	{
 		return super.hashCode();
 	}
-
+	
 	@Override
 	public boolean equals(Object o)
 	{

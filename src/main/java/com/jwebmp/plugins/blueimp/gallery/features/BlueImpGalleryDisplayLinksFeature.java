@@ -3,16 +3,16 @@ package com.jwebmp.plugins.blueimp.gallery.features;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.plugins.blueimp.gallery.BlueImpGallery;
+import com.jwebmp.plugins.blueimp.gallery.BlueImpGalleryDisplay;
 import com.jwebmp.plugins.blueimp.gallery.options.BlueImpGalleryOptions;
-
 import jakarta.validation.constraints.NotNull;
 
 /**
  * The feature to initialize the gallery
  */
 @SuppressWarnings("MissingClassJavaDoc")
-public class BlueImpGalleryFeature
-		extends Feature<GlobalFeatures, BlueImpGalleryOptions<?>, BlueImpGalleryFeature>
+public class BlueImpGalleryDisplayLinksFeature
+		extends Feature<GlobalFeatures, BlueImpGalleryOptions<?>, BlueImpGalleryDisplayLinksFeature>
 {
 	/**
 	 * Whether or not to render the initializer
@@ -25,9 +25,9 @@ public class BlueImpGalleryFeature
 	 * @param gallery
 	 * 		of type BlueImpGallery
 	 */
-	public BlueImpGalleryFeature(@NotNull BlueImpGallery gallery)
+	public BlueImpGalleryDisplayLinksFeature(@NotNull BlueImpGalleryDisplay gallery)
 	{
-		super("BlueImpGalleryFeature", gallery);
+		super("BlueImpGalleryDisplayLinksFeature", gallery);
 		setOptions(new BlueImpGalleryOptions<>());
 	}
 
@@ -46,17 +46,17 @@ public class BlueImpGalleryFeature
 	@Override
 	protected void assignFunctionsToComponent()
 	{
-		/*BlueImpGallery gallery = getComponent();
+		BlueImpGalleryDisplay gallery = getComponent();
 		StringBuilder sb = new StringBuilder();
 
 		String galleryId = gallery.getID(true);
-		*//*String llinksId = gallery.getContents()
-		                         .getID();*//*
+		String llinksId = gallery.getContents()
+		                         .getID();
 
 		getOptions().setContainer(galleryId);
 
-	*//*	String eventHandler = "$(document).ready(function(){" + getNewLine() +
-		                      "document.getElementById('links').onclick = function (event) {" + getNewLine() +
+		String eventHandler = "$(document).ready(function(){" + getNewLine() +
+		                      "document.getElementById('" + getComponent().getID() + "').onclick = function (event) {" + getNewLine() +
 		                      "    event = event || window.event;" + getNewLine() +
 		                      "    var target = event.target || event.srcElement," + getNewLine() +
 		                      "        link = target.src ? target.parentNode : target," + getNewLine() +
@@ -65,7 +65,8 @@ public class BlueImpGalleryFeature
 		                      "    blueimp.Gallery(links, options);" + getNewLine() +
 		                      "};" + getNewLine();
 		sb.append(eventHandler);
-*//*
+		addQuery(sb.toString());
+/*
 		if (isRenderInitializer())
 		{
 			sb.append("blueimp.Gallery(" + getNewLine() +
@@ -85,9 +86,9 @@ public class BlueImpGalleryFeature
 	 * @return
 	 */
 	@Override
-	public BlueImpGallery getComponent()
+	public BlueImpGalleryDisplay getComponent()
 	{
-		return (BlueImpGallery) super.getComponent();
+		return (BlueImpGalleryDisplay) super.getComponent();
 	}
 
 	/**
