@@ -16,6 +16,7 @@
  */
 package com.jwebmp.plugins.blueimp.gallery;
 
+import com.jwebmp.core.base.angular.client.annotations.angularconfig.*;
 import com.jwebmp.core.base.references.CSSReference;
 import com.jwebmp.core.base.references.JavascriptReference;
 import com.jwebmp.core.base.servlets.interfaces.ReferencePool;
@@ -26,104 +27,22 @@ import com.jwebmp.core.base.servlets.interfaces.ReferencePool;
  * @author GedMarc
  * @since 20 Apr 2016
  */
+@NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery.min.js",sortOrder = 150)
+@NgStyleSheet(value = "app/blueimp/blueimp-gallery/css/blueimp-gallery.css",sortOrder = 150)
+@NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery-indicator.js",sortOrder = 155)
+@NgStyleSheet(value = "app/blueimp/blueimp-gallery/css/blueimp-gallery-indicator.css",sortOrder = 150)
+@NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery-video.js",sortOrder = 160)
+@NgStyleSheet(value = "app/blueimp/blueimp-gallery/css/blueimp-gallery-video.css",sortOrder = 150)
+@NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery-vimeo.js",sortOrder = 170)
+@NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery-youtube.js",sortOrder = 170)
+@NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-helper.js",sortOrder = 180)
+
+@NgScript(value = "app/blueimp/gallery-description/blueimpgallery_description.js",sortOrder = 180)
+@NgStyleSheet(value = "app/blueimp/gallery-description/gallerydescriptions.css",sortOrder = 190)
+
+@NgScript(value = "app/blueimp/blueimp-gallery/js/jquery.blueimp-gallery.min.js",sortOrder = 2000)
+
 public enum BlueImpGalleryReferencePool
-		implements ReferencePool
 {
-	/**
-	 * Gallery Reference
-	 */
-	GalleryReference(new JavascriptReference("GalleryReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery.min.js"),
-	                 new CSSReference("GalleryReference", 2.33, "bower_components/blueimp-gallery/css/blueimp-gallery.min.css",150)),
 
-/*	GalleryCustomCSSReference(null,
-	                          new CSSReference("GalleryCustomReference", 1.0, "blueimpgallerycustom/gallerydescriptions.min.css")),*/
-
-	GalleryIndicatorReference(new JavascriptReference("GalleryIndicatorReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery-indicator.min.js"),
-	                          new CSSReference("GalleryIndicatorReference", 2.33, "bower_components/blueimp-gallery/css/blueimp-gallery-indicator.min.css",155)),
-
-	GalleryVideoReference(new JavascriptReference("GalleryVideoReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery-video.min.js"),
-	                      new CSSReference("GalleryVideoReference", 2.33, "bower_components/blueimp-gallery/css/blueimp-gallery-video.min.css",160)),
-	
-	GalleryVimeoReference(new JavascriptReference("GalleryVimeoReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery-vimeo.min.js"),
-	                      null),
-
-	GalleryYoutubeReference(new JavascriptReference("GalleryYoutubeReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-gallery-youtube.min.js"),
-	                        null),
-
-	GalleryHelperReference(new JavascriptReference("GalleryHelperReference", 2.33, "bower_components/blueimp-gallery/js/blueimp-helper.min.js"),
-	                       null),
-	JQueryGalleryReference(new JavascriptReference("GalleryJQueryReference", 2.33, "bower_components/blueimp-gallery/js/jquery.blueimp-gallery.min.js"),
-	                       null),
-	;
-	/**
-	 * The actual javascript
-	 */
-	private JavascriptReference javaScriptReference;
-	/**
-	 * The actual css reference
-	 */
-	private CSSReference cssReference;
-
-	/**
-	 * Constructs a reference pool
-	 */
-	BlueImpGalleryReferencePool()
-	{
-	}
-
-	/**
-	 * Constructs a new reference pool
-	 *
-	 * @param javaScriptReference
-	 * @param cssReference
-	 */
-	BlueImpGalleryReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
-	{
-		this.javaScriptReference = javaScriptReference;
-		this.cssReference = cssReference;
-	}
-
-	/**
-	 * Gets the cSS reference
-	 *
-	 * @return
-	 */
-	@Override
-	public CSSReference getCssReference()
-	{
-		return cssReference;
-	}
-
-	/**
-	 * Sets the CSS Reference
-	 *
-	 * @param cssReference
-	 */
-	@Override
-	public void setCssReference(CSSReference cssReference)
-	{
-		this.cssReference = cssReference;
-	}
-
-	/**
-	 * Returns the javascript reference
-	 *
-	 * @return
-	 */
-	@Override
-	public JavascriptReference getJavaScriptReference()
-	{
-		return javaScriptReference;
-	}
-
-	/**
-	 * Sets the javascript reference
-	 *
-	 * @param javaScriptReference
-	 */
-	@Override
-	public void setJavaScriptReference(JavascriptReference javaScriptReference)
-	{
-		this.javaScriptReference = javaScriptReference;
-	}
 }

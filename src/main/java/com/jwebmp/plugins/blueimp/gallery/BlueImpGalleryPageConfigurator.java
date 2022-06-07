@@ -1,10 +1,8 @@
 package com.jwebmp.plugins.blueimp.gallery;
 
-import com.jwebmp.core.Page;
-import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
-import com.jwebmp.core.services.IPageConfigurator;
-
-import jakarta.validation.constraints.NotNull;
+import com.jwebmp.core.*;
+import com.jwebmp.core.services.*;
+import jakarta.validation.constraints.*;
 
 
 public class BlueImpGalleryPageConfigurator
@@ -201,63 +199,6 @@ public class BlueImpGalleryPageConfigurator
 	@Override
 	public @NotNull Page<?> configure(Page<?> page)
 	{
-	/*	if (BlueImpGalleryPageConfigurator.galleryDescriptionFeature == null)
-		{
-			BlueImpGalleryPageConfigurator.galleryDescriptionFeature = new BlueImpGalleryDescriptionFeature();
-		}*/
-		
-		if (!page.isConfigured() && enabled())
-		{
-			JQueryPageConfigurator.setRequired(true);
-			
-			page.addCssReference(BlueImpGalleryReferencePool.GalleryReference.getCssReference());
-			//page.addCssReference(BlueImpGalleryReferencePool.GalleryCustomCSSReference.getCssReference());
-			
-			//	page.addFeature(BlueImpGalleryPageConfigurator.galleryDescriptionFeature);
-			if (includeJQuery)
-			{
-				page.getBody()
-				    .addJavaScriptReference(BlueImpGalleryReferencePool.JQueryGalleryReference.getJavaScriptReference()
-				                                                                              .setSortOrder(210));
-			}
-			else
-			{
-				page.addJavaScriptReference(BlueImpGalleryReferencePool.GalleryReference.getJavaScriptReference()
-				                                                                        .setSortOrder(210));
-			}
-			
-			page.getBody()
-			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryIndicatorReference.getJavaScriptReference()
-			                                                                                 .setSortOrder(211));
-			
-			page.getBody()
-			    .addCssReference(BlueImpGalleryReferencePool.GalleryIndicatorReference.getCssReference()
-			                                                                          .setSortOrder(211));
-			
-			
-			
-			page.getBody()
-			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryVideoReference.getJavaScriptReference()
-			                                                                             .setSortOrder(212));
-			page.getBody()
-			    .addCssReference(BlueImpGalleryReferencePool.GalleryVideoReference.getCssReference()
-			                                                                      .setSortOrder(213));
-			
-			
-			page.getBody()
-			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryVimeoReference.getJavaScriptReference()
-			                                                                             .setSortOrder(214));
-			
-			
-			page.getBody()
-			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryYoutubeReference.getJavaScriptReference()
-			                                                                               .setSortOrder(215));
-			
-			page.getBody()
-			    .addJavaScriptReference(BlueImpGalleryReferencePool.GalleryHelperReference.getJavaScriptReference()
-			                                                                              .setSortOrder(209));
-			
-		}
 		return page;
 	}
 	
