@@ -29,10 +29,17 @@ import com.jwebmp.core.base.servlets.interfaces.ReferencePool;
  */
 @NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery.min.js",sortOrder = 150)
 @NgStyleSheet(value = "app/blueimp/blueimp-gallery/css/blueimp-gallery.css",sortOrder = 150)
+
 @NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery-indicator.js",sortOrder = 155)
 @NgStyleSheet(value = "app/blueimp/blueimp-gallery/css/blueimp-gallery-indicator.css",sortOrder = 150)
+
 @NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery-video.js",sortOrder = 160)
 @NgStyleSheet(value = "app/blueimp/blueimp-gallery/css/blueimp-gallery-video.css",sortOrder = 150)
+
+@NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery-fullscreen.js",sortOrder = 161)
+
+
+
 @NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery-vimeo.js",sortOrder = 170)
 @NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery-youtube.js",sortOrder = 170)
 @NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-helper.js",sortOrder = 180)
@@ -40,7 +47,7 @@ import com.jwebmp.core.base.servlets.interfaces.ReferencePool;
 @NgScript(value = "app/blueimp/gallery-description/blueimpgallery_description.js",sortOrder = 180)
 @NgStyleSheet(value = "app/blueimp/gallery-description/gallerydescriptions.css",sortOrder = 190)
 
-@NgScript(value = "app/blueimp/blueimp-gallery/js/jquery.blueimp-gallery.min.js",sortOrder = 2000)
+@NgScript(value = "app/blueimp/blueimp-gallery/js/jquery.blueimp-gallery.js",sortOrder = 200)
 
 public enum BlueImpGalleryReferencePool
 {
