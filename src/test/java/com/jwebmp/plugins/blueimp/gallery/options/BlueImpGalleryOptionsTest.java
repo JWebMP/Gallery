@@ -2,8 +2,8 @@ package com.jwebmp.plugins.blueimp.gallery.options;
 
 import com.google.common.base.CaseFormat;
 import com.jwebmp.core.Page;
-import com.guicedee.logger.logging.LogColourFormatter;
-import com.jwebmp.plugins.blueimp.gallery.*;
+import com.jwebmp.plugins.blueimp.gallery.BlueImpGallery;
+import com.jwebmp.plugins.blueimp.gallery.BlueImpGalleryDisplay;
 import org.junit.jupiter.api.Test;
 
 public class BlueImpGalleryOptionsTest
@@ -12,7 +12,7 @@ public class BlueImpGalleryOptionsTest
 	void testCamelCase()
 	{
 		System.out.println(CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_HYPHEN, "SomeInput"));
-		LogColourFormatter.setRenderBlack(false);
+	//	LogColourFormatter.setRenderBlack(false);
 		BlueImpGalleryOptions options = new BlueImpGalleryOptions();
 		options.setCarousel(true)
 		       .setCloseOnEscape(true);
@@ -22,7 +22,7 @@ public class BlueImpGalleryOptionsTest
 	@Test
 	void testPage()
 	{
-		LogColourFormatter.setRenderBlack(false);
+		//LogColourFormatter.setRenderBlack(false);
 		Page<?> p = new Page();
 
 		BlueImpGallery instance = new BlueImpGallery();
@@ -43,7 +43,7 @@ public class BlueImpGalleryOptionsTest
 	@Test
 	void testVideoPage()
 	{
-		LogColourFormatter.setRenderBlack(false);
+	//	LogColourFormatter.setRenderBlack(false);
 		Page<?> p = new Page();
 		
 		BlueImpGallery instance = new BlueImpGallery();
@@ -63,7 +63,7 @@ public class BlueImpGalleryOptionsTest
 	@Test
 	void testYouTube()
 	{
-		LogColourFormatter.setRenderBlack(false);
+	//	LogColourFormatter.setRenderBlack(false);
 		Page<?> p = new Page<>();
 		p.getOptions()
 		 .setTitle("ti");

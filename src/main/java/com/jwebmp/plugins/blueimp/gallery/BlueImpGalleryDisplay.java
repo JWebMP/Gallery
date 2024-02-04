@@ -1,25 +1,26 @@
 package com.jwebmp.plugins.blueimp.gallery;
 
-import com.guicedee.logger.LogFactory;
-import com.jwebmp.core.base.html.*;
+
+import com.jwebmp.core.base.html.DivSimple;
+import com.jwebmp.core.base.html.Image;
+import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.base.html.Paragraph;
 import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.core.base.html.attributes.LinkAttributes;
-import com.jwebmp.core.base.html.interfaces.GlobalChildren;
-import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
-import com.jwebmp.plugins.blueimp.gallery.features.BlueImpGalleryFeature;
-import com.jwebmp.plugins.blueimp.gallery.options.*;
+import com.jwebmp.plugins.blueimp.gallery.options.BlueImpVideoSourcesJSON;
+import com.jwebmp.plugins.blueimp.gallery.options.BlueImpVideoSourcesJSONContainer;
 import jakarta.validation.constraints.NotNull;
+import lombok.extern.java.Log;
 
 import java.util.Arrays;
-import java.util.logging.Logger;
 
-import static com.jwebmp.plugins.blueimp.gallery.BlueImpGalleryClasses.*;
+import static com.jwebmp.plugins.blueimp.gallery.BlueImpGalleryClasses.Data_Gallery;
 
 @SuppressWarnings({"MissingClassJavaDoc", "UnusedReturnValue"})
+@Log
 public class BlueImpGalleryDisplay<J extends BlueImpGalleryDisplay<J>>
 		extends DivSimple<J>
 {
-	private static final Logger log = LogFactory.getLog(BlueImpGalleryDisplay.class);
 	private final BlueImpGallery<?> bodyGallery;
 	/**
 	 * The contents div that gets rendered.
