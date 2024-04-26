@@ -16,10 +16,9 @@
  */
 package com.jwebmp.plugins.blueimp.gallery;
 
-import com.jwebmp.core.base.angular.client.annotations.angularconfig.*;
-import com.jwebmp.core.base.references.CSSReference;
-import com.jwebmp.core.base.references.JavascriptReference;
-import com.jwebmp.core.base.servlets.interfaces.ReferencePool;
+import com.jwebmp.core.base.angular.client.annotations.angularconfig.NgScript;
+import com.jwebmp.core.base.angular.client.annotations.angularconfig.NgStyleSheet;
+import com.jwebmp.core.base.angular.client.annotations.typescript.TsDependency;
 
 /**
  * Default reference pool structure
@@ -27,6 +26,7 @@ import com.jwebmp.core.base.servlets.interfaces.ReferencePool;
  * @author GedMarc
  * @since 20 Apr 2016
  */
+/*
 @NgScript(value = "app/blueimp/blueimp-gallery/js/blueimp-gallery.min.js",sortOrder = 150)
 @NgStyleSheet(value = "app/blueimp/blueimp-gallery/css/blueimp-gallery.css",sortOrder = 150)
 
@@ -48,7 +48,21 @@ import com.jwebmp.core.base.servlets.interfaces.ReferencePool;
 @NgStyleSheet(value = "app/blueimp/gallery-description/gallerydescriptions.css",sortOrder = 190)
 
 @NgScript(value = "app/blueimp/blueimp-gallery/js/jquery.blueimp-gallery.js",sortOrder = 200)
+*/
 
+@TsDependency(value = "blueimp-gallery", version = "*")
+@NgStyleSheet("blueimp-gallery/css/blueimp-gallery.css")
+@NgStyleSheet(value = "blueimp-gallery/css/blueimp-gallery.css", sortOrder = 150)
+@NgStyleSheet(value = "blueimp-gallery/css/blueimp-gallery-video.css", sortOrder = 150)
+@NgScript("blueimp-gallery/js/blueimp-gallery.js")
+
+/*@NgScript(value = "blueimp-gallery/js/blueimp-gallery-fullscreen.js", sortOrder = 161)
+@NgScript(value = "blueimp-gallery/js/blueimp-gallery-indicator.js", sortOrder = 155)
+@NgScript(value = "blueimp-gallery/js/blueimp-gallery-video.js", sortOrder = 160)
+@NgScript(value = "blueimp-gallery/js/blueimp-gallery-vimeo.js", sortOrder = 170)
+@NgScript(value = "blueimp-gallery/js/blueimp-gallery-youtube.js", sortOrder = 170)
+@NgScript(value = "blueimp-gallery/js/blueimp-helper.js", sortOrder = 180)*/
+/*@NgScript("blueimp-gallery/js/jquery.blueimp-gallery.js")*/
 public enum BlueImpGalleryReferencePool
 {
 
