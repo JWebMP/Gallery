@@ -54,6 +54,7 @@ import com.jwebmp.core.base.angular.client.annotations.typescript.TsDependency;
 @NgStyleSheet("blueimp-gallery/css/blueimp-gallery.css")
 @NgStyleSheet(value = "blueimp-gallery/css/blueimp-gallery.css", sortOrder = 150)
 @NgStyleSheet(value = "blueimp-gallery/css/blueimp-gallery-video.css", sortOrder = 150)
+
 @NgScript("blueimp-gallery/js/blueimp-gallery.js")
 
 /*@NgScript(value = "blueimp-gallery/js/blueimp-gallery-fullscreen.js", sortOrder = 161)
